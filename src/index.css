@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-royal-gold: #D4AF37;
+  --color-royal-purple: #2E0854;
+  --color-royal-crimson: #7B0000;
+  --color-royal-blue: #002366;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-100 font-sans antialiased overflow-hidden;
+    background: radial-gradient(circle at center, #2E0854 0%, #1a052e 100%);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-md border border-royal-gold/30 rounded-2xl shadow-[0_0_30px_rgba(212,175,55,0.1)];
+  }
+
+  .royal-button {
+    @apply relative overflow-hidden bg-gradient-to-b from-royal-gold to-[#B8860B] text-zinc-950 font-bold rounded-xl transition-all duration-300 shadow-[0_4px_0_#8B6508] active:translate-y-[2px] active:shadow-[0_2px_0_#8B6508];
+  }
+
+  .royal-border {
+    @apply border-2 border-royal-gold/50 rounded-xl;
+  }
+}
+
+.royal-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30-15-30z' fill='%23d4af37' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
